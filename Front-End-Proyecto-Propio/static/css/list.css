@@ -1,0 +1,81 @@
+:root{
+    --white: #f1f1f1;
+    --whiteClear: #ffffff;
+    --verdeOscuro: #cef0ce;
+    --verdeMarino: #5cce5c;
+    --verdeNeon: #04b404;
+    --verdeMarinoClaro: #84dc84;
+    --verdeMarinoClaro2: #7cdc7c;
+    --verdeLima: #30c430;
+    --verdeClaroLima: #3cc43c;
+    --verdeLimon: #24bc24;
+    --verdeLimon2: #1cbc1c;
+  
+  }
+  
+  *{
+    font-family: 'Fira-Sans', 'Nunito-Sans', sans-serif;
+    color: #2E3542;
+  }
+  
+  h1{
+      display: flex;
+      justify-content: left;
+    }
+    
+  .regresar{
+    color: var(--verdeLimon);
+    text-decoration: none;
+  }
+  
+  .regresar:hover{
+      font-weight: bold;
+  }
+    
+  .agregar{
+     color: #2E3542;
+     text-decoration: none;
+    }
+    
+    .agregar:hover{
+      font-weight: bold;
+    }
+    
+    .title{
+      color: var(--verdeLimon);
+      text-decoration: none;
+    }
+    
+    .title:hover{
+      font-weight: bold;
+      color: #2E3542;
+  }
+  
+  
+  /*Estilos View-Listar*/
+  #tablalist {
+      padding: 5px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+  #tablalist th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #tablalist tr:nth-child(even){
+      background-color: #f3f3f3;
+    }
+    
+    #tablalist tr:hover {
+      background-color: #ddd;
+    }
+    
+    #tablalist th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #30c430;
+      color: white;
+    } 

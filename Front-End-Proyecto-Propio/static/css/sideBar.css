@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 450px;
+    font-size: 16px;
+}
+
+:root{
+    --negro: #000000;
+    --negro2: #101820;  
+    --white: #F1F1F1;
+    --whiteOscuro: #FFFFFF;
+    --whiteOscuro2: #EAEEE5;
+    --gris: #272F38;
+    --gris2: #2a3b4e;
+    --verdeVerano2: #84dc84;
+    --verdeVerano3: #7cdc7c;
+    --verdeMarino: #5cce5c;
+    --verdeLima: #30c430;
+    --verdeLimon: #24bc24;
+    --verdeLimon2: #1cbc1c;
+    --verdeNeon: #04b404;
+    --azulCielo: #3574A5;
+    --azulCielo2: #104E67;
+    --azulQuarzo: #274374;  
+    --azulRey: #112c56;
+  
+    --moradoClaro2: #60569A;
+  --moradoMistico: #3A3368;
+  --moradoOscuro4: #251e36;
+
+}
+
+body{
+    background-color:  #EAEEE3;
+    position: absolute;
+}
+
+h1{
+    color: var(--verdeNeon);
+    font-size: 18px;
+    text-align: center;
+    padding: 15px;
+}
+.wave{
+    padding: absoluta;
+}
+.menu{
+    padding: 24px;
+    z-index: 1;
+    position: relative;
+    background-color:var(--white);
+    width: 280px;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    border-radius: 26px;
+    border: var(--whiteOscuro2);
+    margin-top: -225px;
+    margin-left: 45px;
+    margin-bottom: -225px;
+    float: left;
+}
+
+li{
+    padding: 10px;
+    background-color: var(--verdeLima) ;
+    color: var(--white);
+    list-style: none;
+    border-radius: 7px;
+}
+
+li:active{
+    background-color: #04b40499 ;
+}
+
+.fa-solid{
+    padding: 10px;
+    color: var(--verdeLima);
+    background-color: var(--white);
+    font-size: 18px;
+    border-radius: 4px;
+
+}
+
+
+a{
+    margin-right: 20px;
+    background-color: var(--verdeLima);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#logo{
+    width: 75px;
+    height: auto;
+    display: flex;
+    margin-left: 60px;
+    margin-bottom: 15px;
+}
+#iconHome{
+    width: 50px ;
+    color: var(--white);
+    background-color: var(--gris);
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 15px;
+    margin-bottom:20px ;
+    padding: 20px 80px;
+    margin-left: 36px;
+}
+
+#iconHome:active{
+    background-color: #2a3b4e80;
+}
+
+hr{
+    border: solid 1px var(--verdeLima);
+}
+
+.contenedor{
+    z-index: 99px;
+    position: relative;
+    float: right;
+    width: 920px ;
+    height: 865px;
+    padding: 0px;
+    margin-top: -290px;
+    background-color: var(--moradoMistico);
+    margin-right: 45px;
+    margin-bottom: -290px;
+    border-radius: 26px;
+}
+
+/*FORM ESTILOS============================================================*/
+
+section{
+    background-color: var(--gris);
+    position: relative;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 750px;
+    margin-right: 45px;
+    margin-top: -100px;
+    margin-bottom: -100px;
+    margin-left: 45px;
+    z-index: 999;
+    border-radius: 24px;
+    height:620px;
+    padding: 45px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: auto;
+    padding: 16px;
+}
+
+h4{
+    font-size: 18px;
+    color: var(--verdeLima);
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+}
+input{
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+label{
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+label:hover{
+    font-weight: 700;
+    padding: 1px;
+}
+input:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+select{
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 4px;
+}
+.btn-primary{
+    text-align: center;
+    background-color: var(--verdeLimon2)  ;
+    color: var(--whiteClear);
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 6px;
+  }
+  
+  .botoncito:active{
+      font-weight: bold;
+      padding: 2px;
+    }
+  
+#imgForm{
+    width: 65px;
+    color: var(--white);
+}

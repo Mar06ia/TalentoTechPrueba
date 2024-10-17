@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="La página permitirá iniciar sesión">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    <title>Inicio de Sesión | SISCA </title>
+    <!--Enlazando Estilos-->
+    <link rel="icon" type="image/x-icon" href="./img/logo-verde.png">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Josefin+Sans&family=Merriweather+Sans&family=Nunito+Sans:opsz@6..12&family=Open+Sans&family=PT+Sans&family=Public+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}">
+
+    <!--Estilos Html5 y css3-->
+    <link rel="stylesheet" type="image/x-icon" href="../static/img/icon.png">
+    <link rel="stylesheet" href="../../static/css/form.css">
+</head>
+<body>
+    <a class="regresar" href="/">Regresar</a>
+    <section>
+            <img src="../static/img/logo-verde.png" alt="logo" width="100">
+            <h1 class="title">Registrar Usuario</h1>
+            <form action="/formUser" method="POST" id="login-form">
+
+                <select name="tipoDniUser" id="rol" class="form-select" readonly>
+                    <option>Elige un tipo de DNI:</option>
+                    <option value="cc"><C>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Q</C>C</option>
+                            <option value="ti">TI</option>
+                            <option value="ce">CE</option>
+                </select>
+    
+                <div class="form-floating">
+                    <label for="numeroDniUser">Numero de Documento</label>
+                    <input type="number" id="numeroDni" name="numeroDniUser" placeholder="Numero de Documento:" required
+                         class="form-control"  >
+                </div>
+
+                <div class="form-floating">
+                    <label for="nombreUser">Nombres</label>
+                    <input type="text" class="form-control" id="nombreUser" name="nombreUser">
+                </div>
+                
+                <div class="form-floating">
+                    <label for="apellidoUser">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidoUser" name="apellidoUser">
+                </div>
+
+                <select name="rolUser" id="rol" class="form-select" readonly>
+                    <option>Rol</option>
+                    <option value="coordinador">Coordinador</option>
+                    <option value="cuentadante">Cuentadante</option>
+                    <option value="instructor">Instructor</option>
+                    <option value="mesayuda">Mesa Ayuda</option>
+                </select>
+    
+                <div class="form-floating">
+                    <label for="correoUser">Correo</label>
+                    <input type="email" class="form-control" id="correoUser" name="correoUser">
+                </div>
+
+                <div class="form-floating">
+                    <label for="telefonoUser">Telefono</label>
+                    <input type="number" class="form-control" id="telefonoUser" name="telefonoUser">
+                </div>
+                
+                <div class="form-floating">
+                    <label for="direccionUser">Dirección</label>
+                    <input type="text" class="form-control" id="direccionUser" name="direccionUser" >
+                </div>
+
+                <div class="form-floating">
+                    <label for="contraseniaCrearUser">Crear Contraseña</label>
+                    <input type="password" class="form-control" id="contraseniaCrearUser" name="contraseniaUser" >
+                </div>
+
+                    {% if message %}
+    
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Error</strong>{{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    
+                    {% endif %}
+                <button class="btn-primary botoncito" type="submit" id="button-login">Iniciar Sesión</button>
+            </form>
+        </section>
+    </body>
+</html>

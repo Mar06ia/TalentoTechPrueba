@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="https://wwww.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="La página permitirá iniciar sesión">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Listar Instalación |SISCA</title>
+    <!--Enlazando Estilos-->
+    <link rel="icon" type="image/x-icon" href="./img/logo-verde.png">
+    <link rel="stylesheet" type="text/css" href="./css/stylelist.css">
+   <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Josefin+Sans&family=Merriweather+Sans&family=Nunito+Sans:opsz@6..12&family=Open+Sans&family=PT+Sans&family=Public+Sans&display=swap" rel="stylesheet">
+
+    <!--Estilos Html5 y css3-->
+    <link rel="stylesheet" type="image/x-icon" href="../../static/img/logo-verde.png">
+    <link rel="stylesheet" href="../../static/css/list.css">
+
+</head>
+<body>
+
+    <div>
+        <a class="regresar" th:href="/" >Regresar</a>
+        <h1 class="title">Listar Instalación</h1>
+        <a class="agregar" type="button" href="/installation/formInstallation">Agregar Instalación</a>
+
+        <table id="tablalist=">
+            <tr><!--Llamamos encabezado de la lista-->
+                <th>Id</th>
+                <th>Piso</th>
+                <th>Numero</th>
+                <th>Detalle</th>
+                <th>Estado</th>
+                <th colspan="2">Acciones</th>
+            </tr>
+            <thead>
+                <tbody>
+                    <tr th:if="${installationes.size()>0}" th:each="e:${installationes}">
+                        <td th:text="${e.idInstallation}"></td>
+                        <td th:text="${e.pisoInstallation}"></td>
+                        <td th:text="${e.numeroInstallation}"></td>
+                        <td th:text="${e.detalleInstallation}"></td>
+                        <td th:text="${e.estadoInstallation}"></td>
+ 
+                        <td>
+                            <a role="button" class="btn btn-info btn-sm" th:href="@{editInstalation/}+${e.idInstallation}">
+                                <i class="bi bi-pencil">Editar</i>
+                            </a>
+                            <a role="button" class="btn btn-danger btn-sm" th:href="@{delete/}+${e.idInstallation}"
+                            onclick="return confirm('Estas seguro de que deseas eliminar esta instalación?')";>
+                                <i class="bi bi-trash">Elimnar</i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody> 
+            </thead>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>

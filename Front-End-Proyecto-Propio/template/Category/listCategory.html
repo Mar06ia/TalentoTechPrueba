@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="La página permitirá iniciar sesión">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Listar Categoria |SISCA</title>
+    <!--Enlazando Estilos-->
+    <link rel="icon" type="image/x-icon" href="./img/logo-verde.png">
+    <link rel="stylesheet" type="text/css" href="./css/stylelist.css">
+   <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Josefin+Sans&family=Merriweather+Sans&family=Nunito+Sans:opsz@6..12&family=Open+Sans&family=PT+Sans&family=Public+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/list.css')}}">
+
+    <!--Estilos Html5 y css3-->
+    <link rel="stylesheet" type="image/x-icon" href="../../static/img/logo-verde.png">
+    <link rel="stylesheet" href="../../static/css/list.css">
+
+</head>
+<body>
+    <div>
+        <a class="regresar" href="/" >Regresar</a>
+        <h1>Lista de Categoria</h1>
+        <a class="agregar" type="button" href="/category/formCategory">Agregar Categoria</a>
+
+        <table id="tablalist">
+            <tr><!--llamamos el encabezado de la lista-->
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th colspan="2">Acciones</th>
+            </tr>
+            <thead>
+                <tbody>
+                    <tr th:if="${categorys.size()>0}" th:each="e:${categorys}">
+                        <td th:text="${c.idCategoria}"></td>
+                        <td th:text="${c.nombreCategoria}"></td>
+                        <td th:text="${c.descripcionCategoria}"></td>
+                        <td th:text="${c.cantidadCategoria}"></td>
+
+                        <td>
+                            <a role="button" class="btn btn-info btn-sm" th:href="@{editCategory/}+${c.idCategoria}">
+                                <i class="bi bi-pencil">Editar</i>
+                            </a>
+
+                            <a role="button" class="btn btn-warning btn-sm" th:href="@{delete/}+${c.idCategoria}"
+                                        onclick="return confirm('Estas seguro que quieres eliminar estas Categoria?')";>
+                                <i class="bi bi-trash">Eliminar</i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>

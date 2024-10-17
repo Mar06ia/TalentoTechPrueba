@@ -1,0 +1,97 @@
+:root{
+  --negro: #000000;
+  --negro2: #101820;
+  
+  --white: #F1F1F1;
+  --whiteOscuro: #FFFFFF;
+  --whiteOscuro2: #EAEEE5;
+  
+  --gris: #272F38;
+  --gris2: #2a3b4e;
+  --grisAzul: #1B2B41;
+
+  --azulCielo: #3574A5;
+  --azulCielo2: #104E67;
+  --azulQuarzo: #274374;  
+  --azulRey: #112c56;
+
+  --verdeVerano2: #84dc84;
+  --verdeVerano3: #7cdc7c;
+  --verdeMarino: #5cce5c;
+  --verdeLima: #30c430;
+  --verdeLimon: #24bc24;
+  --verdeLimon2: #1cbc1c;
+  --verdeNeon: #04b404;
+  --verdeAqua: #008c45;
+  --verdeBee: #008c4e;
+
+  --moradoClaro2: #60569A;
+  --moradoMistico: #3A3368;
+  --moradoOscuro4: #251e36;
+}
+*{
+  font-family: 'Fira-Sans', 'Nunito-Sans', sans-serif;
+  color: var(--negro);
+}
+
+h1{
+    display: flex;
+    justify-content: left;
+  }
+  
+.regresar{
+  color: var(--verdeLimon);
+  text-decoration: none;
+}
+
+.regresar:hover{
+    font-weight: bold;
+}
+  
+.agregar{
+   color: #2E3542;
+   text-decoration: none;
+  }
+  
+  .agregar:hover{
+    font-weight: bold;
+  }
+  
+  .title{
+    color: var(--verdeLimon);
+    text-decoration: none;
+  }
+  
+  .title:hover{
+    font-weight: bold;
+    color: #2E3542;
+}
+
+
+/*Estilos View-Listar*/
+#tablalist {
+    padding: 5px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+#tablalist th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #tablalist tr:nth-child(even){
+    background-color: #f3f3f3;
+  }
+  
+  #tablalist tr:hover {
+    background-color: #ddd;
+  }
+  
+  #tablalist th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #30c430;
+    color: white;
+  } 

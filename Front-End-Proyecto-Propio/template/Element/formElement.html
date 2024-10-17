@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="La página permitirá iniciar sesión">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Form Elemento |SISCA</title>
+    <!--Enlazando Estilos-->
+    <!--Enlazando Estilos-->
+    <link rel="icon" type="image/x-icon" href="./img/logo-verde.png">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Josefin+Sans&family=Merriweather+Sans&family=Nunito+Sans:opsz@6..12&family=Open+Sans&family=PT+Sans&family=Public+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}">
+
+    <!--Estilos Html5 y css3-->
+    <link rel="stylesheet" type="image/x-icon" href="../../static/img/logo-verde.png">
+    <link rel="stylesheet" href="../../static/css/form.css">
+
+</head>
+<body>
+    <section>
+    <a class="regresar" href="/" >Regresar</a>
+    <img src="../../static/img/logo-verde.png" alt="logo" width="100">
+    <h1 class="title">Registrar Elemento </h1>
+        <form action="formElement" method="POST" id="login-form">
+
+            <div class="form-floating">
+                <label for="nombreElemento">Nombre</label>
+                <input type="text" class="form-control" id="nombreElemento" name="nombreElement">
+            </div>
+            
+            <div class="form-floating">
+                <label for="serialElemento">Serial</label>
+                <input type="text" class="form-control" id="serialElement" name="serialElement">
+            </div> 
+
+            
+            <div class="form-floating">
+                <label for="marcaElemento">Marca</label>
+                <input type="text" class="form-control" id="marcaElement" name="marcaElement">
+            </div> 
+
+            <div class="form-floating">
+                <label for="descripcionElemento">Descripcion</label>
+                <input type="text" class="form-control" id="descripcionElemento" name="descripcionElement">
+            </div>
+            
+                {% if message %}
+        
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Error</strong>{{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            
+                {% endif %}
+            <button class="btn-primary botoncito" type="submit" id="button-login">Iniciar Sesión</button>
+
+        </form>
+    </section>
+</body>
+</html>

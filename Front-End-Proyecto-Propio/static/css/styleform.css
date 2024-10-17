@@ -1,0 +1,188 @@
+:root{
+  --negro: #000000;
+  --negro2: #101820;
+  
+  --white: #F1F1F1;
+  --whiteOscuro: #FFFFFF;
+  --whiteOscuro2: #EAEEE5;
+  
+  --gris: #272F38;
+  --gris2: #2a3b4e;
+  --grisAzul: #1B2B41;
+
+  --azulCielo: #3574A5;
+  --azulCielo2: #104E67;
+  --azulQuarzo: #274374;  
+  --azulRey: #112c56;
+
+  --verdeVerano2: #84dc84;
+  --verdeVerano3: #7cdc7c;
+  --verdeMarino: #5cce5c;
+  --verdeLima: #30c430;
+  --verdeLimon: #24bc24;
+  --verdeLimon2: #1cbc1c;
+  --verdeNeon: #04b404;
+  --verdeAqua: #008c45;
+  --verdeBee: #008c4e;
+
+  --moradoClaro2: #60569A;
+  --moradoMistico: #3A3368;
+  --moradoOscuro4: #251e36;
+/*============================================================================================================
+==================================================ICONOS=====================================================
+===============================================================================================================
+
+<i class="fa-solid fa-phone-volume">Telefono</i>
+<i class="fa-solid fa-calendar">Calendario</i>
+<i class="fa-solid fa-files">Archivos</i>
+<i class="fa-solid fa-localitation-pin">Ubicación</i>
+<i class="fa-solid fa-upload">Cargar Archivos</li>
+<i class="fa-solid fa-file-export">Reporte</li>
+<i class="fa-solid fa-power-off">Cerrar Sessión</li>
+<i class="fa-solid fa-moon">Filtro Oscuro</li>
+<i class="fa-solid fa-sun">Filtro Claro</li>
+<i class="fa-solid fa-check">Check list</li>
+<i class="fa-solid fa-paperclip">Cargar Archivos</li>
+<i class="fa-solid fa-right-to-bracket">flecha derecha</i>
+<i class="fa-solid fa-link">Link</i> 
+<i class="fa-solid fa-qrcode">QR</i>
+<i class="fa-solid fa-eye-low-vision">contraseña</i>
+<i class="fa-solid fa-envelope-circle-check">Correo</i>
+<i class="fa-solid fa-chevron-right">adelantar</i>
+<i class="fa-solid fa-chevron-left">atras</i>
+*/
+
+}
+*{
+  background-color: var(--negro);
+    font-family: 'Fira-Sans', 'Nunito-Sans', sans-serif;
+    color: var(--white);
+}
+
+h1{
+  text-align: center;
+}
+
+.regresar{
+color: var(--verdeLimon);
+text-decoration: none;
+}
+
+.regresar:hover{
+  font-weight: bold;
+}
+
+
+
+nav{
+  width: 100%;
+  height: 70px;
+  color: #fff;
+}
+
+.nav-img{
+  margin: 8px;
+  float: left;
+  padding-left: 15px;
+}
+
+.home{
+  text-decoration: none;
+  color: var(--verdeLimon2);
+  font-weight: 700;
+  align-items: center;
+
+}
+
+
+.nav-link{
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  float: right;
+  text-decoration: none;
+  color: var(--verdeLimon2);
+  font-weight: 700;
+}
+
+.nav-link:hover{
+  font-size: 15px;
+  font-weight: 900;
+}
+
+h2{
+  background-color: var(--green);
+}
+
+section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: auto;
+    padding: 16px;
+}
+
+
+input{
+  display:flex;
+  justify-content: center;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+input:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+select{
+  display:flex;
+  justify-content: center;
+  width: 110%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 4px;
+}
+
+.btn-primary{
+  text-align: center;
+  background-color: var(--verdeLimon2)  ;
+  color: var(--whiteClear);
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 110%;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+.botoncito:active{
+    font-weight: bold;
+  }
+
+  .lista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+  }

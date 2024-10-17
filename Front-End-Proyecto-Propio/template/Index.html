@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="La página permitirá iniciar sesión">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Inicio |SISCA</title>
+   <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Josefin+Sans&family=Merriweather+Sans&family=Nunito+Sans:opsz@6..12&family=Open+Sans&family=PT+Sans&family=Public+Sans&display=swap" rel="stylesheet">
+
+    <!--Enlazando Estilos Python-->
+    <link rel="stylesheet" type="image/x-icon" href="../static/img/logo-verde.png">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+
+    <!--Estilos Html5 y css3-->
+    <link rel="stylesheet" type="image/x-icon" href="../static/img/icon.png">
+    <link rel="stylesheet" href="../static/css/login.css">
+
+</head>
+<body>
+
+    <header>
+        <a class="nav-img">
+            <img src="../static/img/logo-negro.png" alt="Logo" width="55">
+            <a href="https://www.sena.edu.co/es-co/Paginas/default.aspx" class="home">Inicio</a>
+        </a>
+        <nav>
+            <a class="nav-link" href="https://www.sena.edu.co/es-co/formacion/Paginas/Estudie-en-el-SENA.aspx">Formación</a>
+            <a class="nav-link" href="https://www.sena.edu.co/es-co/ciudadano/Paginas/default.aspx">Atención y Servicio a la Ciudadanía</a>
+        </nav>
+    </header>
+    <section> 
+        <img src="../static/img/logo-verde.png" alt="logo" width="100">
+        <h2>Sistema de Informacion para el control y seguimiento de los cuentadantes asignados</h2>
+        <h3>SISCA</h3><br><br><br><br>
+             
+        <nav class="lista">   
+            <ul>
+                <video src="../static/img/VIDEO INTRODUCTORIIO.mp4"  class="slide"></video>
+                <img src="../static/img/4.jpg"  class="slide" alt="">
+                <img src="../static/img/6.jpg"  class="slide" alt="">
+                <img src="../static/img/5.jpg"  class="slide" alt="">
+
+                <a href="../template/Login copy.html">login</a>            
+                <a href="../template/User/formUser.html">Registrar Usuario</a>            
+                <a href="../template/User/listUser.html">Listar Usuario</a>            
+                <a href="../template/Element/formElement.html">Registrar Elemento</a>            
+                <a href="{{url_for('listElement')}}">Listar Elemento</a>            
+            </ul>
+        </nav> 
+<section>
+        <!--Icons-->
+        <script src="https://kit.fontawesome.com/392a27d13c.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>

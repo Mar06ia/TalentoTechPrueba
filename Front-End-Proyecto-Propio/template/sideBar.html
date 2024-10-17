@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="La página permitirá registrar usuarios">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SideBar</title>
+    <!--Enlazando Estilos-->
+    <link rel="icon" type="image/x-icon" href="./img/logo-verde.png">
+    <link rel="stylesheet" type="text/css" href="./css/sideBar.css">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/392a27d13c.js" crossorigin="anonymous"></script>
+
+    <!--Estilos Html5 y css3-->
+    <link rel="stylesheet" type="image/x-icon" href="../static/img/logo-verde.png">
+    <link rel="stylesheet" href="../static/css/sideBar.css">
+    <script src="https://kit.fontawesome.com/392a27d13c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <svg  class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#5cce5c" fill-opacity="0.95" d="M0,128L1440,192L1440,0L0,0Z"></path></svg>
+    <nav class="menu">
+        <ul>
+            <img src="../static/img/logo-verde.png" id="logo" alt=""><br>
+            <h2>Sistema de Información para el Seguimiento y Apoyo de los Cuentadantes Asignados</h2><br><hr>
+            <a href="" i class="fa-solid fa-house" id="iconHome"></i></a><br>
+            <!--<li><a href="" i class="fa-solid fa-user" class="icon"></i></a>Usuario</li><br>-->
+            <li><a href="" i class="fa-solid fa-layer-group" class="icon"></i></a>Categoria</li><br>
+            <li><a href="" i class="fa-solid fa-laptop" class="icon"></i></a>Elemento</li><br>
+            <li><a href="" i class="fa-solid fa-chart-line" class="icon"></i></a>Inventario</li><br>
+            <li><a href="" i class="fa-solid fa-shop" class="icon"></i></a>Ambiente</li><br>
+            <li><a href="" i class="fa-solid fa-check-to-slot" class="icon"></i></a>Revisión</li><br>
+            <li><a href="" i class="fa-solid fa-bell" class="icon"></i></a>Novedad</li><br>
+            <li><a href="" i class="fa-solid fa-newspaper"></i></a>Documetation</li><br>
+            <!--
+            <li><a href="" i class="fa-solid fa-pencil"></i></a>Editar</li><br>
+            <li><a href="" i class="fa-solid fa-rotate-left"></i></a>Actualizar</li><br>
+            <li><a href="" i class="fa-solid fa-trash"></i></a>Eliminar</li><br>
+            -->
+        </ul>
+    </nav>
+    <section>
+        <img id="imgForm" src="./img/logo-blanco.png" alt="logo" width="100">
+            <h4>Registrar Usuario</h4>
+            <form action="@{/user/add}" th:object="${user}" method="post">
+            <!--idUser nombreUser apellidoUser telefonoUser correoUser-->
+                <div class="form-floating">
+                    <label for="nombreUser">Nombres</label>
+                    <input type="text" class="form-control" id="nombreUser" th:field="*{nombreUser}">
+                    <div class="form-text text-danger" th:if="${#fields.hasErrors('nombreUser')}" th:errors="*{nombreUser}"></div>
+                </div>
+                
+                <div class="form-floating">
+                    <label for="apellidoUser">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidoUser" th:field="*{apellidoUser}">
+                    <div class="form-text text-danger" th:if="${#fields.hasErrors('apellidoUser')}" th:errors="*{apellidoUser}"></div>
+                </div>
+
+                <div class="form-floating">
+                    <label for="telefonoUser">Telefono</label>
+                    <input type="tel" class="form-control" id="telefonoUser" th:field="*{telefonoUser}">
+                    <div class="form-text text-danger" th:if="${#fields.hasErrors('telefonoUser')}" th:errors="*{telefonoUser}"></div>
+                </div>
+                
+                <div class="form-floating">
+                    <label for="correoUser">Correo</label>
+                    <input type="email" class="form-control" id="correoUser" th:field="*{correoUser}">
+                    <div class="form-text text-danger" th:if="${#fields.hasErrors('correoUser')}" th:errors="*{correoUser}"></div>
+                </div>
+                <div class="form-floating">
+                    <button type="submit" class="btn-primary" name="accion">Guardar</button>
+                </div>
+            </form>
+    </section>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#5cce5c" fill-opacity="0.95" d="M0,256L1440,128L1440,320L0,320Z"></path></svg>
+    <script src="https://kit.fontawesome.com/392a27d13c.js" crossorigin="anonymous"></script>
+</body>
+</html>

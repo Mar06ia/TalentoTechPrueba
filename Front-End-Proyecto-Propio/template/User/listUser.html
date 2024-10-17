@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="La página permitirá iniciar sesión">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    <title>Inicio de Sesión | SISCA </title>
+    <!--Enlazando Estilos-->
+    <link rel="icon" type="image/x-icon" href="./img/logo-verde.png">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Josefin+Sans&family=Merriweather+Sans&family=Nunito+Sans:opsz@6..12&family=Open+Sans&family=PT+Sans&family=Public+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/list.css')}}">
+
+    <!--Estilos Html5 y css3-->
+    <link rel="stylesheet" type="image/x-icon" href="../static/img/icon.png">
+    <link rel="stylesheet" href="../static/css/login.css">
+
+</head>
+<body>
+    <div>
+        <a class="regresar" href="/">Regresar</a>
+        <h1 class="title">Lista de Usuario</h1>
+        <a class="agregar" type="button" href="/formUser">Agregar Usuario</a>
+
+        <table id="tablalist">
+            <tr>
+                <th>Id</th>
+                <th>Tipo de Documento</th>
+                <th>Numero de Documento</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Rol</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Dirección</th>
+                <th colspan="2">Acciones</th>
+            </tr>
+            <tbody>
+                {%  for datos in data %}
+                    <tr>
+                        <td>{{datos.idUser}}</td>
+                        <td>{{datos.tipoDniUser}}</td>
+                        <td>{{datos.numeroDniUser}}</td>
+                        <td>{{datos.nombreUser}}</td>
+                        <td>{{datos.apellidoUser}}</td>
+                        <td>{{datos.rolUser}}</td>
+                        <td>{{datos.correoUser}}</td>
+                        <td>{{datos.telefonoUser}}</td>
+                        <td>{{datos.direccionUser}}</td>
+                        
+                        <td>
+                          <button class="btn btn-success" id="btn-edit{{datos.idUser}}" 
+                                        data-bs-toggle="modal" data-bs-target="#modal{{datos.idUser}}">Editar
+                            </button>
+                        </td>
+
+                        <td>
+                          <a href="{{url_for('deleteUser',idUser=datos.idUser)}}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                        
+                    </tr>
+                    <!-----------MODAL------>
+                    <div class="modal fade" id="modal{{datos.idUser}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">{{datos.nombreUser}}</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <form action="/edit/{{datos.idUser}}" method="POST">
+                                <label for="nombreUser">Nombres</label>
+                                <input type="text" class="form-control" id="nombreUser" name="nombreUser" value="{{datos.nombreUser}}">
+                                <label for="apellidoUser">Apellidos</label>
+                                <input type="text" class="form-control" id="apellidoUser" name="apellidoUser" value="{{datos.apellidoUser}}">
+                                <label for="correoUser">Correo</label>
+                                <input type="email" class="form-control" id="correoUser" name="correoUser" value="{{datos.correoUser}}">
+                                <label for="telefonoUser">Telefono</label>
+                                <input type="number" class="form-control" id="telefonoUser" name="telefonoUser" value="{{datos.telefonoUser}}">
+                                <label for="direccionUser">Dirección</label>
+                                <input type="text" class="form-control" id="direccionUser" name="direccionUser" value="{{datos.direccionUser}}" >                                                    
+                              
+                                <div class="modal-footer">
+                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                              </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                {% endfor %}
+            </tbody>
+            
+        </table>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="https://wwww.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="La página permitirá iniciar sesión">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Listar Elemento |SISCA</title>
+    <!--Enlazando Estilos-->
+    <link rel="icon" type="image/x-icon" href="./img/logo-verde.png">
+    <link rel="stylesheet" type="text/css" href="./css/stylelist.css">
+   <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Josefin+Sans&family=Merriweather+Sans&family=Nunito+Sans:opsz@6..12&family=Open+Sans&family=PT+Sans&family=Public+Sans&display=swap" rel="stylesheet">
+
+    <!--Estilos Html5 y css3-->
+    <link rel="stylesheet" type="image/x-icon" href="../../static/img/logo-verde.png">
+    <link rel="stylesheet" href="../../static/css/list.css">
+
+</head>
+<body>
+
+    <div>
+        <a class="regresar" href="/">Regresar</a>
+        <h1 class="title">Lista de Elemento</h1>
+        <a class="agregar" type="button" href="/formElement">Agregar Elemento</a>
+
+        <table id="tablalist">
+            <tr><!--Llamamos encabezado de la lista-->
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Serial</th>
+                <!--<th>Imagen</th>-->
+                <th>Marca</th>
+                <th>Descripción</th>
+                <th colspan="2">Acciones</th>
+            </tr>
+            <tbody>
+                {%  for elementos in data %}
+                    <tr>
+                        <td>elementos.idElement</td>
+                        <td>elementos.nombreElement</td>                            <td></td>
+                        <td>elementos.serialElemento</td>
+
+                        <!--<td>
+                            {% if(elementos.foto !="") %}
+                                <img src="{{url-element}}"{{carro.foto}} alt="">
+                        </td>-->
+                        <td>elementos.descripcionElement</td>
+
+                        <td><button class="btn btn-success" id="btn-edit{{elementos.idElement}}" 
+                                    data-bs-toggle="modal" data-bs-target="#modal{{elementos.idElement}}">Editar
+                            </button>
+                        </td>
+                        <td>
+                            <a href="{{url_for('deleteElement',idElement=elementos.idElement)}}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                                        <!-----------MODAL------>
+                                        <div class="modal fade" id="modal{{elementos.idElement}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title" id="exampleModalLabel">{{elementos.nombreElement}}</h5>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <form action="/editElement/{{elementos.idElement}}" method="POST">
+                                                    <label for="nombreElemento">Nombre</label>
+                                                    <input type="text" class="form-control" id="nombreElemento" name="nombreElement">
+                                                    <label for="serialElemento">Serial</label>
+                                                    <input type="text" class="form-control" id="serialElement" name="serialElement">
+                                                    <label for="marcaElemento">Marca</label>
+                                                    <input type="text" class="form-control" id="marcaElement" name="marcaElement">
+                                                    <label for="descripcionElemento">Descripcion</label>
+                                                    <input type="text" class="form-control" id="descripcionElemento" name="descripcionElement">
+                                                                                                                                                
+                                                    <div class="modal-footer">
+                                                      <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                  </form>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</body>
+</html>
